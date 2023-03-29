@@ -35,6 +35,12 @@ app.get("/getvenue", (_request, response) => {
       });
 });
 
+app.post('/addvenue', (request, response) => {
+  const data = request.body;
+  console.log(data.venue);
+  return response.send('POST metoda -> Add '+data.venue);
+});
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
